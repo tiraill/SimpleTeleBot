@@ -10,7 +10,7 @@ fh = logging.FileHandler('fancy.log')
 fh.setFormatter(formatter)
 sh = logging.StreamHandler(sys.stdout)
 sh.setFormatter(formatter)
-logging.basicConfig(level=logging.DEBUG, handlers=[fh, sh], format=formatter)
+logging.basicConfig(level=logging.INFO, handlers=[fh, sh], format=formatter)
 
 logger = logging.getLogger(__name__)
 start_time = time.time()
@@ -21,7 +21,7 @@ def error(bot, update, error):
 
 
 def start(bot, update):
-    logger.info('start send')
+    logger.info('send start command')
     date1 = datetime.datetime.fromtimestamp(int(start_time))
     date2 = datetime.datetime.fromtimestamp(int(time.time()))
     delta = (date2 - date1)
